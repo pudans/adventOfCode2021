@@ -47,5 +47,5 @@ class Day02 : Base<List<Pair<String, Int>>>(2) {
 }
 
 fun main() {
-    Day02().submit()
+    Day02().submitAll()
 }

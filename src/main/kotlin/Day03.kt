@@ -63,5 +63,5 @@ class Day03 : Base<Array<String>>(3) {
 }
 
 fun main() {
-    Day03().submit()
+    Day03().submitAll()
 }

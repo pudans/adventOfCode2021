@@ -17,5 +17,5 @@ class Day01 : Base<List<Int>>(1) {
 }
 
 fun main() {
-    Day01().submit()
+    Day01().submitAll()
 }

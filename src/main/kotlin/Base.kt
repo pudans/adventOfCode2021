@@ -13,14 +13,20 @@ abstract class Base<T>(day : Int) {
 
     abstract fun mapInputData(file: File): T
 
-    fun submit() {
+    fun submitAll() {
+        submitTestInput()
+        submitInput()
+    }
+
+    fun submitTestInput() {
         val testInput = mapInputData(testInputFile)
-        val input = mapInputData(inputFile)
-
         println("Part1 test: ${part1(testInput)}")
-        println("Part1: ${part1(input)}")
-
         println("Part2 test: ${part2(testInput)}")
+    }
+
+    fun submitInput() {
+        val input = mapInputData(inputFile)
+        println("Part1: ${part1(input)}")
         println("Part2: ${part2(input)}")
     }
 }
