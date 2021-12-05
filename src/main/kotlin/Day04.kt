@@ -3,10 +3,11 @@ package day01
 import java.io.File
 
 typealias Board = ArrayList<MutableList<Int>>
+private data class Bingo(val nums: List<Int>, val boards: List<Board>)
 
-class Day04 : Base<Data>(4) {
+private class Day04 : Base<Bingo>(4) {
 
-    override fun part1(input: Data): Int {
+    override fun part1(input: Bingo): Int {
         for (i in input.nums.indices) {
             val num = input.nums[i]
             input.boards.forEachIndexed { index1, board ->
@@ -34,7 +35,7 @@ class Day04 : Base<Data>(4) {
         return 0
     }
 
-    override fun part2(input: Data): Int {
+    override fun part2(input: Bingo): Int {
         var result = 0
         for (i in input.nums.indices) {
             val num = input.nums[i]
@@ -68,7 +69,7 @@ class Day04 : Base<Data>(4) {
         return result
     }
 
-    override fun mapInputData(file: File): Data {
+    override fun mapInputData(file: File): Bingo {
         val lines = file.readLines()
         val nums = lines.first().split(',').map { it.toInt() }
         val n = (lines.size - 1) / 6
@@ -87,13 +88,11 @@ class Day04 : Base<Data>(4) {
             i+=5
         }
 
-        return Data(nums, boards)
+        return Bingo(nums, boards)
     }
 
 
 }
-
-data class Data(val nums: List<Int>, val boards: List<Board>)
 
 fun main() {
     Day04().submitAll()
