@@ -2,7 +2,7 @@ package day01
 
 import java.io.File
 
-class Day02 : Base<List<Pair<String, Int>>>(2) {
+class Day02 : Base<List<Pair<String, Int>>, Int>(2) {
 
     override fun part1(input: List<Pair<String, Int>>): Int {
         var depth = 0

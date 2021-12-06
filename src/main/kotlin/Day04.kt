@@ -5,7 +5,7 @@ import java.io.File
 typealias Board = ArrayList<MutableList<Int>>
 private data class Bingo(val nums: List<Int>, val boards: List<Board>)
 
-private class Day04 : Base<Bingo>(4) {
+private class Day04 : Base<Bingo, Int>(4) {
 
     override fun part1(input: Bingo): Int {
         for (i in input.nums.indices) {

@@ -2,7 +2,7 @@ package day01
 
 import java.io.File
 
-class Day03 : Base<Array<String>>(3) {
+class Day03 : Base<Array<String>, Int>(3) {
 
     override fun part1(input: Array<String>): Int {
         val counts = IntArray(input.first().length)

@@ -5,7 +5,7 @@ import java.io.File
 data class Point(val x: Int, val y: Int)
 private typealias Data = List<Pair<Point, Point>>
 
-class Day05 : Base<Data>(5) {
+class Day05 : Base<Data, Int>(5) {
 
     private fun getRangeX(pair: Pair<Point, Point>) =
         if (pair.first.x > pair.second.x) {
