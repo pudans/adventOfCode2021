@@ -83,5 +83,5 @@ class Day05 : Base<Data, Int>(5) {
 }
 
 fun main() {
-    Day05().submitInput()
+    Day05().submitAll()
 }
