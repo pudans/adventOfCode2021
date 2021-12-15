@@ -22,7 +22,7 @@ class Day15 : Base<Array<IntArray>, Int>(15) {
             Point(point.x + 1, point.y),
             Point(point.x, point.y + 1),
         )
-            .asSequence()
+//            .asSequence()
             .filter { it.x in input.indices }
             .filter { it.y in input.first().indices }
             .map { memory[it] ?: traverse(input, it) }
@@ -39,15 +39,22 @@ class Day15 : Base<Array<IntArray>, Int>(15) {
                 if (d > 9) d - 9 else d
             }
         }
-        newInput.forEach {
-            println(it.joinToString(""))
+//        newInput.forEach {
+//            println(it.joinToString(""))
+//        }
+
+        val result = traverse(newInput, Point(0,0)) -newInput.first().first()
+
+        for (i in newInput.indices) {
+            for (j in newInput.first().indices) {
+                println(newInput[i].joinToString { (memory[Point(i,j)] ?: 0).toString() } )
+            }
         }
 
-        return traverse(newInput, Point(0,0)) -newInput.first().first()
-            .also { println(memory.values.sortedDescending().filter { it > 2900 }) }
+        return result
     }
 }
 
 fun main() {
-    Day15().submitPart2TestInput()
+    Day15().submitPart2Input()
 }
